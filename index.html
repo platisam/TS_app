@@ -2,12 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>TypeScript Tutorial</title>
+    <link rel="stylesheet" href="/src/css/style.css" />
+    <script type="module" src="/src/main.ts" defer></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div class="wrapper">
+      <h1>Finance Logger</h1>
+
+      <!-- Output list -->
+      <ul class="item-list"></ul>
+    </div>
+
+    <footer>
+      <form class="new-item-form">
+        <div class="field">
+          <label>Type:</label>
+          <select id="type">
+            <option value="invoice">Invoice</option>
+            <option value="payment">Payment</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>To / From:</label>
+          <input type="text" id="tofrom" />
+        </div>
+        <div class="field">
+          <label>Details:</label>
+          <input type="text" id="details" />
+        </div>
+        <div class="field">
+          <label>Amount (E):</label>
+          <input type="number" id="amount" />
+        </div>
+        <button>Add</button>
+      </form>
+
+      <a href="https://www.thenetninja.co.uk">The Net Ninja</a>
+    </footer>
   </body>
 </html>
