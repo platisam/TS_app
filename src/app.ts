@@ -1,4 +1,5 @@
 import { Invoice } from "./classes/Invoice";
+import { ListTemplate } from "./classes/ListTemplate";
 import { Payment } from "./classes/Payment";
 import { HasFormatter } from "./interfaces/HasFormatter";
 
@@ -25,6 +26,10 @@ import { HasFormatter } from "./interfaces/HasFormatter";
 // console.log(inv.client, inv.amount, inv.format());
 // });
 
+// list template instance
+const ul = document.querySelector("ul")!;
+const list = new ListTemplate(ul);
+
 const form = document.querySelector(".new-item-form") as HTMLFormElement;
 
 const type = document.querySelector("#type") as HTMLSelectElement;
@@ -42,5 +47,5 @@ form.addEventListener("submit", (e: Event) => {
     doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
   }
 
-  console.log(doc);
+  list.render(doc, type.value, "end");
 });
